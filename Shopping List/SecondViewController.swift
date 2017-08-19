@@ -14,13 +14,18 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var input: UITextField!
     @IBAction func addItem(_ sender: UIButton)
     {
+        //to prevent empty items in our list
         if (input.text != ""){
-            list.append(input.text!)
-            input.text = ""
+            addToShoppingList()
         }
         for textField in self.view.subviews where textField is UITextField {
             textField.resignFirstResponder()
         }
+    }
+    
+    func addToShoppingList(){
+        list.append(input.text!)
+        input.text = ""
     }
     
     override func viewDidLoad() {

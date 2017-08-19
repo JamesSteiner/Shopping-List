@@ -8,7 +8,7 @@
 
 import UIKit
 
-var list = ["bread", "milk", "eggs", "bananas"]
+var list = [""]
 var textField = [UITextField]()
 
 
@@ -21,6 +21,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
+        //setup cell
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
         cell.textLabel?.text = list[indexPath.row]
         
@@ -29,6 +30,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
+        //basically if the user swipes
         if editingStyle == UITableViewCellEditingStyle.delete
         {
             list.remove(at: indexPath.row)
